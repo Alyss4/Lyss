@@ -1,0 +1,36 @@
+.modal-body {
+    display: flex;
+    flex-direction: column;
+}
+#inputChargement,
+#inputDechargement {
+  display: none;
+}
+
+.csssubmit {
+    display: flex;
+}
+
+/* test moi ca */
+.slider {
+  height: 0px;
+  overflow: hidden;
+  transition: height 0.5s ease;
+  -moz-transition: height 0.5s ease;
+  -ms-transition: height 0.5s ease;
+  -o-transition: height 0.5s ease;
+  -webkit-transition: height 0.5s ease;
+}
+
+.slided {
+  height: 100px;
+}
+
+.supercard {
+  display:none;
+}
+#bin{
+  display:none;
+  color: red;
+
+}

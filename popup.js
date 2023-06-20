@@ -39,7 +39,7 @@ function Deleteliste() {
     var checkbox = checkboxes[i];
     if (checkbox.checked) {
       poubelle.style.display = "flex";
-      return; // Quitte la fonction dès qu'une case est cochée
+      return; // Quitte la fonction dès qu'une case est cochée salut
     }
   }
   poubelle.style.display = "none";

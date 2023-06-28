@@ -59,7 +59,7 @@ function supprimerElements() {
 }
 
 // ouvrir modal modifier
-function ouvrirModal() {
+function ouvrirModalModifier() {
   var modal = new bootstrap.Modal(document.getElementById('modalModification'));
   modal.show();
 }

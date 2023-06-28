@@ -1,4 +1,4 @@
-function Edittable(){
+function Edittable() {
   alert("Hello! I am an alert box!!");
   window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 }
@@ -34,7 +34,7 @@ function toggleDechargement() {
 // script suppression avec les checkbox
 function Deleteliste() {
   var checkboxes = document.querySelectorAll('input[name="check"]');
-  var poubelle = document.getElementById("bin");  
+  var poubelle = document.getElementById("bin");
   for (var i = 0; i < checkboxes.length; i++) {
     var checkbox = checkboxes[i];
     if (checkbox.checked) {
@@ -47,21 +47,29 @@ function Deleteliste() {
 //script pour delete
 function supprimerElements() {
   var checkboxes = document.querySelectorAll('input[name="check"]');
-  var tableauBody = document.querySelector('table tbody');
+  var tableauBody = document.querySelector("table tbody");
 
   for (var i = checkboxes.length - 1; i >= 0; i--) {
     var checkbox = checkboxes[i];
     if (checkbox.checked) {
-      var ligne = checkbox.closest('tr');
+      var ligne = checkbox.closest("tr");
       tableauBody.removeChild(ligne);
     }
   }
 }
 
 // ouvrir modal modifier
-function ouvrirModalModifier() {
-  var modal = new bootstrap.Modal(document.getElementById('modalModification'));
+function ouvrirModalModifier(selectedId) {
+  //Query pour récupérer le ligne selectionné et son emplacement
+  var emplacement = document.querySelector(
+    `#packageList tbody tr[id='${selectedId}'] td[name='emplacement']`
+  ).textContent;
+  console.log(emplacement);
+  //changement du nom de la modal
+  document.getElementById("staticBackdropLabel").innerHTML =
+    "Modification d'un paquet";
+  //chargement de l'emplacemnt
+  document.getElementById("inputEmplacement").value = emplacement;
+  var modal = new bootstrap.Modal(document.getElementById("staticBackdrop"));
   modal.show();
 }
-
-

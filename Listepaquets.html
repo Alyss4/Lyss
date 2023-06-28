@@ -138,7 +138,7 @@
                         <div class="row g-1">
                             <div class="col-12">
                                 <div class="table-responsive">
-                                    <table class="table table-striped table-hover table-bordered table-sm ">
+                                    <table id="packageList" class="table table-striped table-hover table-bordered table-sm ">
                                         <thead>
                                             <tr>
                                                 <th>
@@ -157,13 +157,13 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
+                                            <tr id="1">
                                                 <td>
                                                     <input class="form-check-input" type="checkbox" value=""
                                                         id="flexCheckDefault1" name="check" onclick="Deleteliste()">
                                                 </td>
-                                                <td>ID</td>
-                                                <td>PARKING A</td>
+                                                <td>1</td>
+                                                <td name="emplacement">PARKING A</td>
                                                 <td>TROUSSE</td>
                                                 <td>A635E90</td>
                                                 <td>100</td>
@@ -173,17 +173,17 @@
                                                 <td>labem ipsum</td>
                                                 <td>
                                                     <input type="button" class="fa-solid fa-pen-to-square"
-                                                        onclick="ouvrirModalModifier()"></input>
+                                                        onclick="ouvrirModalModifier(1)"></input>
                                                 </td>
 
                                             </tr>
-                                            <tr>
+                                            <tr id="2">
                                                 <td>
                                                     <input class="form-check-input" type="checkbox" value=""
                                                         id="flexCheckDefault2" name="check" onclick="Deleteliste()">
                                                 </td>
-                                                <td>ID</td>
-                                                <td>PARKING A</td>
+                                                <td>2</td>
+                                                <td name="emplacement">PARKING B</td>
                                                 <td>TROUSSE</td>
                                                 <td>A635E90</td>
                                                 <td>100</td>
@@ -193,17 +193,17 @@
                                                 <td>labem ipsum</td>
                                                 <td>
                                                     <input type="button" class="fa-solid fa-pen-to-square"
-                                                        onclick="ouvrirModalModifier()"></input>
+                                                        onclick="ouvrirModalModifier(2)"></input>
                                                 </td>
 
                                             </tr>
-                                            <tr>
+                                            <tr id="3">
                                                 <td>
                                                     <input class="form-check-input" type="checkbox" value=""
                                                         id="flexCheckDefault3" name="check" onclick="Deleteliste()">
                                                 </td>
-                                                <td>ID</td>
-                                                <td>PARKING A</td>
+                                                <td>3</td>
+                                                <td name="emplacement">PARKING C</td>
                                                 <td>TROUSSE</td>
                                                 <td>A635E90</td>
                                                 <td>100</td>
@@ -213,7 +213,7 @@
                                                 <td>labem ipsum</td>
                                                 <td>
                                                     <input type="button" class="fa-solid fa-pen-to-square"
-                                                        onclick="ouvrirModalModifier()"></input>
+                                                        onclick="ouvrirModalModifier(3)"></input>
                                                 </td>
 
                                             </tr>
@@ -242,7 +242,7 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Ajout d'un nouveau paquet</h1>
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel"></h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
@@ -253,7 +253,7 @@
                                         <div class="mb-3">
                                             <label for="inputEmplacement" class="form-label">EMPLACEMENT PAQUET</label>
                                             <input type="text" class="form-control" id="inputEmplacement"
-                                                aria-describedby="">
+                                                aria-describedby="" value="">
                                         </div>
 
                                         <!-- Input Type Designation-->
@@ -298,70 +298,6 @@
                                         data-bs-dismiss="modal">Close</button>
 
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Deuxième modal (modification) -->
-                <div class="modal fade" id="modalModification" data-bs-backdrop="static" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <!-- Contenu de la deuxième modal -->
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modification d'un paquet</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form>
-
-                                    <!-- Input Type Emplacement -->
-                                    <div class="mb-3">
-                                        <label for="inputEmplacement" class="form-label">EMPLACEMENT PAQUET</label>
-                                        <input type="text" class="form-control" id="inputEmplacement"
-                                            aria-describedby="">
-                                    </div>
-
-                                    <!-- Input Type Designation-->
-                                    <div class="mb-3">
-                                        <label for="inputDesignation" class="form-label">DESIGNATION</label>
-                                        <input type="text" class="form-control" id="inputDesignation"
-                                            aria-describedby="">
-                                    </div>
-
-                                    <!-- Input Type Reference -->
-                                    <div class="mb-3">
-                                        <label for="inputReference" class="form-label">REFERENCE</label>
-                                        <input type="text" class="form-control" id="inputReference" aria-describedby="">
-                                    </div>
-
-                                    <!-- InputTypeHauteur Longueur Largueur -->
-
-                                    <div class="input-group mb-3">
-                                        <input type="number" class="form-control" placeholder="HAUTEUR"
-                                            aria-label="Hauteur" id="hauteur">
-                                        <span class="input-group-text">H</span>
-                                        <input type="number" class="form-control" placeholder="LONGUEUR"
-                                            aria-label="Longueur" id="longueur">
-                                        <span class="input-group-text">L</span>
-                                        <input type="number" class="form-control" placeholder="LARGUEUR"
-                                            aria-label="Largueur" id="largueur">
-                                        <span class="input-group-text">l</span>
-                                    </div>
-
-                                    <!-- Input Type Derniere Actualisation -->
-                                    <div id="inputDerniereActualisation" class="input-group mb-3">
-                                        <span class="input-group-text">Dernière Actualisation</span>
-                                        <input type="datetime-local" class="form-control"
-                                            aria-label="Dernière Actualisation" value>
-                                    </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                                </form>
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
                             </div>
                         </div>
                     </div>

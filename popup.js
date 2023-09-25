@@ -73,3 +73,6 @@ function ouvrirModalModifier(selectedId) {
   var modal = new bootstrap.Modal(document.getElementById("staticBackdrop"));
   modal.show();
 }
+
+
+

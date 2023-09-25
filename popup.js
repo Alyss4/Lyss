@@ -19,7 +19,7 @@ function toggleChargement() {
     inputChargement.style.display = "flex";
   } else {
     inputChargement.style.display = "none";
-  }
+  }d
 }
 
 function toggleDechargement() {
